@@ -1,0 +1,25 @@
+<section id="home">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 text-center">
+        <h1>Mastermind</h1>
+        <form name="loginForm">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Your Name" ng-model="user.name" name="name" required>
+            <div ng-messages="loginForm.name.$error" ng-show="loginForm.name.$dirty">
+              <div ng-message="required">Please fill this field</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" placeholder="Your Email" ng-model="user.email" name="email" required>
+            <div ng-messages="loginForm.email.$error" ng-show="loginForm.email.$dirty">
+              <div ng-message="required">Please fill this field</div>
+              <div ng-message="email">Your email is invalid</div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" ng-disabled="loginForm.$invalid" ng-click="login(user)">Enter</button>
+        </form>
+      </div>  
+    </div>
+  </div>
+</section>
