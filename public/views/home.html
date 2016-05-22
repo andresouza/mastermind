@@ -1,23 +1,19 @@
 <section id="home">
   <div class="container">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3 text-center">
-        <h1>Mastermind</h1>
+      <div class="col-md-4 col-md-offset-4 text-center">
         <form name="loginForm">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Your Name" ng-model="user.name" name="name" required>
-            <div ng-messages="loginForm.name.$error" ng-show="loginForm.name.$dirty">
-              <div ng-message="required">Please fill this field</div>
-            </div>
-          </div>
-          <div class="form-group">
-            <input type="email" class="form-control" placeholder="Your Email" ng-model="user.email" name="email" required>
-            <div ng-messages="loginForm.email.$error" ng-show="loginForm.email.$dirty">
-              <div ng-message="required">Please fill this field</div>
-              <div ng-message="email">Your email is invalid</div>
-            </div>
-          </div>
-          <button type="submit" class="btn btn-primary" ng-disabled="loginForm.$invalid" ng-click="login(user)">Enter</button>
+          <md-input-container class="md-block">
+            <label>Name</label>
+            <input type="text" ng-model="user.name" name="name" required/>
+          </md-input-container>
+
+          <md-input-container class="md-block">
+            <label>Email</label>
+            <input type="email" ng-model="user.email" name="email" required/>
+          </md-input-container>
+
+          <md-button class="md-raised md-primary" ng-disabled="loginForm.$invalid" ng-click="login(user)">Enter</md-button>
         </form>
       </div>  
     </div>

@@ -1,15 +1,17 @@
 <section id="games">
   <div class="container">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h1>Mastermind</h1>
-        <table class="table">
-          <tr>
+      <div class="col-md-6 col-md-offset-3 text-center">
+        <md-button class="md-raised md-primary" ng-href="/game/create">Create Game</md-button>  
+        <table class="table text-left">
+          <tr ng-repeat="(index, value) in gamesList">
             <td>
-              Andre Souza
+              <img src="{{value.codemaker.avatar}}">
+              {{value.codemaker.name}}
             </td>
             <td>
-              <a href="" class="btn btn-primary">Join</a>
+              <md-button class="md-raised md-primary" ng-hide="value.played" ng-href="/game/{{value.hashed_id}}/play">Play</md-button>
+              <md-button class="md-raised md-warn" ng-show="value.played" ng-href="/game-play/{{value.hashed_id}}/view">View</md-button>
             </td>
           </tr>
         </table>

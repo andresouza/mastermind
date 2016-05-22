@@ -1,3 +1,134 @@
 body {
   
 }
+
+/* Header */
+header {
+  margin: 30px 0;
+}
+
+header a {
+  color: inherit;
+}
+
+header a:hover {
+  text-decoration: none;
+}
+
+/* Colored Buttons */
+.chosen-colors-box {
+  padding: 18px;
+  background: #f7f7f7;
+  box-shadow: inset 0px 3px 6px rgba(0,0,0,0.2);
+  border-radius: 6px;
+}
+
+.chosen-colors-box p {
+  margin: 0;
+}
+
+ul.colored-buttons {
+  margin-left: 0;
+  min-height: 45px;
+}
+
+ul.colored-buttons li button {
+  margin: 0;
+}
+
+ul.colored-buttons li button.colorR { background: #e74c3c; }
+ul.colored-buttons li button.colorG { background: #2ecc71; }
+ul.colored-buttons li button.colorB { background: #3498db; }
+ul.colored-buttons li button.colorY { background: #f1c40f; }
+ul.colored-buttons li button.colorO { background: #e67e22; }
+ul.colored-buttons li button.colorP { background: #9b59b6; }
+ul.colored-buttons li button.colorC { background: #1abc9c; }
+ul.colored-buttons li button.colorM { background: #de6bae; }
+
+ul.colored-buttons li button.colorR:hover { background-color: #e74c3c !important; opacity: 0.8; }
+ul.colored-buttons li button.colorG:hover { background-color: #2ecc71 !important; opacity: 0.8; }
+ul.colored-buttons li button.colorB:hover { background-color: #3498db !important; opacity: 0.8; }
+ul.colored-buttons li button.colorY:hover { background-color: #f1c40f !important; opacity: 0.8; }
+ul.colored-buttons li button.colorO:hover { background-color: #e67e22 !important; opacity: 0.8; }
+ul.colored-buttons li button.colorP:hover { background-color: #9b59b6 !important; opacity: 0.8; }
+ul.colored-buttons li button.colorC:hover { background-color: #1abc9c !important; opacity: 0.8; }
+ul.colored-buttons li button.colorM:hover { background-color: #de6bae !important; opacity: 0.8; }
+
+/* Games List */
+#games table {
+  margin-top: 24px;
+}
+
+#games table tr td {
+  vertical-align: middle;
+}
+
+#games table tr td:last-child {
+  text-align: right;
+}
+
+#games table tr td img {
+  max-width: 30px;
+  margin-right: 6px;
+  border-radius: 50%;
+}
+
+#games table tr td .md-button {
+  min-width: 72px;
+  min-height: 24px;
+  line-height: 24px;
+  margin-bottom: 0;
+}
+
+/* Game Create */
+#game-create form h4 {
+  margin-bottom: 24px;
+}
+
+/* Game Play */
+#game-play .fix-scroll.active {
+  height: 45px;
+}
+
+#game-play .fix-scroll.active ul {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  z-index: 99;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+  background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+}
+#game-play table.game-guesses {
+  margin: 0;
+}
+
+#game-play table.game-guesses tr td {
+  vertical-align: middle;
+}
+
+#game-play table.game-guesses tr td ul {
+  margin: 0;
+}
+
+#game-play table.game-guesses tr td ul.colored-buttons {
+  width: 410px;
+}
+
+#game-play table.game-guesses tr td.check ul li {
+  width: 10px;
+  height: 10px;
+  margin: 2px;
+  border-radius: 50%;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.6);
+}
+
+#game-play table.game-guesses tr td.check ul li.exact {
+  background: #000;
+}
+
+#game-play table.game-guesses tr td.check ul li.near {
+  background: #fff;
+}
+
+

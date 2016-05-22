@@ -1,0 +1,75 @@
+<section id="game-play">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 text-center">
+        <div ng-show="played">
+          <h4>Ops, {{error}}</h4>
+          <p>But you can select another game in our list!</p>
+          <md-button class="md-raised md-primary" ng-href="/games">Games</md-button>
+        </div>
+        <div ng-hide="played">
+          <h4>Lets play</h4>
+          <div class="fix-scroll">
+            <ul class="list-inline option-colors colored-buttons">
+              <li ng-repeat="(key, value) in optionColors">
+                <md-button class="md-fab md-mini color{{value}}" ng-click="addColor(value)" aria-label="{{value}}">
+                </md-button>
+              </li>
+              <li>
+                <div class="time"></div>
+              </li>
+            </ul>
+          </div>
+          <div class="chosen-colors-box">
+            <table class="table text-left game-guesses">
+              <tr ng-repeat="(index, value) in gameTurns">
+                <td class="turn text-center">
+                  {{index + 1}}
+                </td>
+                <td class="guess">
+                  <ul class="list-inline colored-buttons">
+                    <li ng-repeat="(key2, value2) in value.colors track by $index">
+                      <md-button class="md-fab md-mini color{{value2}}" aria-label="{{value2}}">
+                      </md-button>
+                    </li>
+                  </ul>
+                </td>
+                <td class="check">
+                  <ul class="list-inline">
+                    <li class="exact" ng-repeat="n in range(1, value.exact)"></li>
+                  </ul>
+                  <ul class="list-inline">
+                    <li class="near" ng-repeat="n in range(1, value.near)"></li>
+                  </ul>
+                </td>
+              </tr>
+              <tr ng-hide="gameEnd">
+                <td></td>
+                <td class="guess">
+                  <ul class="list-inline chosen-colors colored-buttons">
+                    <li ng-repeat="(key, value) in chosenColors track by $index">
+                      <input class="hidden" type="text" value="{{value}}" required>
+                      <md-button class="md-fab md-mini color{{value}}" ng-click="removeColor(key)" aria-label="{{value}}">
+                      </md-button>
+                    </li>
+                  </ul>
+                </td>
+                <td>
+                  <md-button class="md-raised md-primary" ng-disabled="chosenColors.length < 8" ng-click="sendGuess()">Check</md-button>
+                </td>
+              </tr>
+              <tr ng-show="gameEnd">
+                <td></td>
+                <td class="guess">
+                  <md-button class="md-raised md-primary" ng-href="/games">See Games</md-button>
+                </td>
+                <td>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>  
+    </div>
+  </div>
+</section>

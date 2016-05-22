@@ -8,10 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Styles -->
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/app.css">
   </head>
   <body ng-app="mastermindApp">
+    <header class="text-center">
+      <a ng-href="/games">
+        <h1>Mastermind</h1>
+      </a>
+    </header>
 
     <div ng-view></div>
 
@@ -19,10 +25,20 @@
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.min.js"></script>
     <script src="bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+    <script src="bower_components/angular-material/angular-material.min.js"></script>
 
     <!-- Angular -->
     <script src="js/app.js"></script>
     <script src="js/controllers/home.js"></script>
+    <script src="js/controllers/games.js"></script>
+    <script src="js/controllers/game-create.js"></script>
+    <script src="js/controllers/game-play.js"></script>
+
+    <script src="js/library/jquery.plugin.min.js"></script>
+    <script src="js/library/jquery.countdown.min.js"></script>
   </body>
 </html>
