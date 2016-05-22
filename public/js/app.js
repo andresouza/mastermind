@@ -61,11 +61,16 @@ app.config(function ($locationProvider, $routeProvider) {
     return $http.post(config.apiURL + 'games/' + game + '/guess.json', colors, { headers: {'Authorization': 'Token token=' + Auth.get().api_key}})
   }
 
+  var _view = function (game) {
+    return $http.get(config.apiURL + 'games/' + game + '.json', { headers: {'Authorization': 'Token token=' + Auth.get().api_key}})
+  }
+
   return {
     list: _list,
     create: _create,
     play: _play,
-    check: _check
+    check: _check,
+    view: _view
   };
 })
 .factory('Auth', function ($cookieStore, $location) {
