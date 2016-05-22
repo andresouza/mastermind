@@ -22,6 +22,10 @@ app.config(function ($locationProvider, $routeProvider) {
       controller: 'GamePlayCtrl as gamePlay',
       templateUrl: '/views/game-play.html'
     })
+    .when('/game/:gameId/view', {
+      controller: 'GameViewCtrl as gameView',
+      templateUrl: '/views/game-view.html'
+    })
     .otherwise({
       redirectTo: '/'
     });
