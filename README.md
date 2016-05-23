@@ -53,3 +53,9 @@ $ heroku open
 or
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
+## TODO
+- Show the timer during the game;
+- Fix minor bugs;
+- Create a real time interaction between the codemaker and codebreaker;
+- Improve the design.
