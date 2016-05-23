@@ -4,7 +4,7 @@ body {
 
 /* Header */
 header {
-  margin: 30px 0;
+  padding: 30px 0;
 }
 
 header a {
@@ -17,7 +17,8 @@ header a:hover {
 
 /* Footer */
 footer {
-  padding: 12px;
+  margin-top: 30px;
+  padding: 30px 12px;
   background: #333;
   color: #fff;
 }
@@ -181,4 +182,31 @@ ul.colored-buttons li button.colorM:hover { background-color: #de6bae !important
   background: #fff;
 }
 
+@media (max-width: 768px) {
+  .chosen-colors-box {
+    padding: 12px 6px;
+  }
 
+  ul.colored-buttons {
+    min-height: 24px;
+  }
+
+  ul.colored-buttons li button {
+    min-height: 0;
+    width: 20px !important;
+    height: 20px !important;
+    line-height: 20px !important;
+  }
+  
+  #game-play table.game-guesses tr td ul.colored-buttons {
+    width: 124px;
+  }
+
+  #game-play table tr td button {
+    margin: 0;
+    line-height: 24px;
+    min-width: 0px;
+    font-size: 12px;
+    min-height: 0;
+  }
+}

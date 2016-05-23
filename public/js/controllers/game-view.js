@@ -7,7 +7,6 @@ app.controller('GameViewCtrl', function ($rootScope, $scope, $routeParams, GameA
 
   GameAPI.view($routeParams.gameId).then(function(obj) {
     $scope.game = obj.data;
-    console.log($scope.game);
   }, function(error) {
     console.log('false', error);
   });

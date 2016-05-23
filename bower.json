@@ -21,6 +21,7 @@
     "angular": "^1.5.5",
     "angular-messages": "^1.5.5",
     "angular-material": "^1.0.9",
-    "angular-cookies": "^1.5.5"
+    "angular-cookies": "^1.5.5",
+    "action-cable": "^5.0.0-beta3"
   }
 }
