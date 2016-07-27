@@ -58,4 +58,5 @@ or
 - Show the timer during the game;
 - Fix minor bugs;
 - Create a real time interaction between the codemaker and codebreaker;
+- Create a random game mode;
 - Improve the design.
