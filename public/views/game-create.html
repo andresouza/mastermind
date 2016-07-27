@@ -21,9 +21,12 @@
             <p>PS: you can remove clicking on the colors here</p>
             {{colors}}
           </div>
-          <md-button class="md-raised md-primary" ng-disabled="chosenColors.length < 8" ng-click="createGame()">Create</md-button>
+          <md-button class="md-raised md-primary" ng-disabled="chosenColors.length < 8 || loading" ng-click="createGame()">
+            <span ng-hide="loading">Create</span>
+            <md-progress-circular class="center-block" md-diameter="40px" ng-show="loading"></md-progress-circular>
+          </md-button>
         </form>
-      </div>  
+      </div>
     </div>
   </div>
 </section>

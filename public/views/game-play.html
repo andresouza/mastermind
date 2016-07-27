@@ -55,7 +55,10 @@
                   </ul>
                 </td>
                 <td>
-                  <md-button class="md-raised md-primary" ng-disabled="chosenColors.length < 8" ng-click="sendGuess()">Check</md-button>
+                  <md-button class="md-raised md-primary" ng-disabled="chosenColors.length < 8 || loading" ng-click="sendGuess()">
+                    <span ng-hide="loading">Check</span>
+                    <md-progress-circular class="center-block" md-diameter="40px" ng-show="loading"></md-progress-circular>
+                  </md-button>
                 </td>
               </tr>
               <tr ng-show="gameEnd">
@@ -69,7 +72,7 @@
             </table>
           </div>
         </div>
-      </div>  
+      </div>
     </div>
   </div>
 </section>

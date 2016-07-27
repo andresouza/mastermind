@@ -30,13 +30,19 @@ app.config(function ($locationProvider, $routeProvider) {
       redirectTo: '/'
     });
 })
+.run(function($rootScope, $location) {
+  $rootScope.$on('$routeChangeStart', function(event, next, current) {
+    $rootScope.loading = false;
+  });
+})
 .constant('config', {
   apiURL: 'https://axiomzen-mastermind.herokuapp.com/api/',
   baseURL: window.location.origin,
   colors: ['R','B','G','Y','O','P','C','M']
 })
-.factory('UserAPI', function (config, $http) {
+.factory('UserAPI', function (config, $http, $rootScope) {
   var _login = function (data) {
+    $rootScope.loading = true;
     return $http.post(config.apiURL + 'authentication.json', data);
   };
 
@@ -50,6 +56,7 @@ app.config(function ($locationProvider, $routeProvider) {
   };
 
   var _create = function (colors) {
+    $rootScope.loading = true;
     return $http.post(config.apiURL + 'games.json', colors, { headers: {'Authorization': 'Token token=' + Auth.get().api_key}})
   }
 
@@ -58,6 +65,7 @@ app.config(function ($locationProvider, $routeProvider) {
   }
 
   var _check = function (game, colors) {
+    $rootScope.loading = true;
     return $http.post(config.apiURL + 'games/' + game + '/guess.json', colors, { headers: {'Authorization': 'Token token=' + Auth.get().api_key}})
   }
 
@@ -86,7 +94,7 @@ app.config(function ($locationProvider, $routeProvider) {
 
   var _verify = function () {
     user = $cookieStore.get('current.user');
-    
+
     if ($location.path() === '/' && user) {
       $location.path('/games');
     }

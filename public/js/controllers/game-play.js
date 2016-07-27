@@ -11,7 +11,7 @@ app.controller('GamePlayCtrl', function ($rootScope, $scope, $location, $routePa
   $scope.chosenColors = [];
   $scope.game = {};
   $scope.gameTurns = [];
-  
+
   $(window).on('scroll', function () {
     if ($(window).scrollTop() > $('#game-play .fix-scroll').offset().top) {
       $('#game-play .fix-scroll').addClass('active');
@@ -40,6 +40,8 @@ app.controller('GamePlayCtrl', function ($rootScope, $scope, $location, $routePa
 
   $scope.sendGuess = function () {
     GameAPI.check($scope.gameId, {'colors': $scope.chosenColors}).then(function(obj) {
+      $rootScope.loading = false;
+
       var guess = obj.data;
 
       guess.colors = $scope.chosenColors;
