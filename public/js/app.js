@@ -1,6 +1,6 @@
 "use strict";
 
-var app = angular.module('mastermindApp', ['ngRoute', 'ngMessages', 'ngMaterial', 'ngCookies']);
+var app = angular.module('mastermindApp', ['ngRoute', 'ngMessages', 'ngMaterial', 'ngCookies', 'timer']);
 
 app.config(function ($locationProvider, $routeProvider) {
   $locationProvider.html5Mode(true);

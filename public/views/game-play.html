@@ -15,8 +15,13 @@
                 <md-button class="md-fab md-mini color{{value}}" ng-click="addColor(value)" aria-label="{{value}}">
                 </md-button>
               </li>
-              <li>
-                <div class="time"></div>
+              <li class="timer">
+                <md-button>
+                  <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                  <timer ng-if="game.time_left > 0" interval="1000" countdown="game.time_left">
+                    {{mminutes}}:{{sseconds}}
+                  </timer>
+                </md-button>
               </li>
             </ul>
           </div>

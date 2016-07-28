@@ -50,6 +50,7 @@ app.controller('GamePlayCtrl', function ($rootScope, $scope, $location, $routePa
 
       if (guess.solved == true) {
         $scope.gameEnd = true;
+        $scope.stopTimer();
         $mdDialog.show(
           $mdDialog.alert()
             .parent(angular.element(document.querySelector('#game-play')))
@@ -93,4 +94,14 @@ app.controller('GamePlayCtrl', function ($rootScope, $scope, $location, $routePa
     }
     return input;
   };
+
+  $scope.stopTimer = function (){
+    $scope.$broadcast('timer-stop');
+  };
+
+  $scope.$on('timer-tick', function (event, args){
+    if (args.millis === 60000) {
+      $('ul.colored-buttons li.timer').addClass('finishing');
+    }
+  });
 });

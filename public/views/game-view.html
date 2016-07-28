@@ -25,6 +25,17 @@
         <div>
           <div class="chosen-colors-box">
             <table class="table text-left game-guesses">
+              <tr>
+                <td colspan="3" class="text-right">
+                  Time taken: 
+                  <md-button>
+                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                    <timer ng-if="game.time_taken > 0" interval="1000" countdown="game.time_taken" autostart="false">
+                      {{mminutes}}:{{sseconds}}
+                    </timer>
+                  </md-button>
+                </td>
+              </tr>
               <tr ng-repeat="(index, value) in game.turns">
                 <td class="turn text-center">
                   {{index + 1}}
@@ -57,7 +68,7 @@
             </table>
           </div>
         </div>
-      </div>  
+      </div>
     </div>
   </div>
 </section>
